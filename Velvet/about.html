@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Visibility</title>
+    <style>
+        .dropdown {
+            margin-bottom: 10px;
+        }
+        #dropdown2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <select id="dropdown1" class="dropdown" onchange="showDropdown2()">
+        <option value="">Select an option</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+    </select>
+    
+    <select id="dropdown2" class="dropdown">
+        <option value="">Select another option</option>
+        <option value="suboption1">Sub Option 1</option>
+        <option value="suboption2">Sub Option 2</option>
+    </select>
+
+    <script>
+        function showDropdown2() {
+            var dropdown1 = document.getElementById("dropdown1");
+            var dropdown2 = document.getElementById("dropdown2");
+            
+            if (dropdown1.value) {
+                dropdown2.style.display = "block";
+            } else {
+                dropdown2.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
